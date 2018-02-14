@@ -5,6 +5,9 @@
  * Copyright (c) 2017 Siddique Hameed
  * Licensed MIT <https://github.com/siddii/angular-timer/blob/master/LICENSE.txt>
  */
+
+var humanizeDuration = require("humanize-duration");   // same like my requirejs shim. Also from the humanizeDuration docs at https://github.com/EvanHahn/HumanizeDuration.js
+var moment = require("moment");  // same like my requirejs shim
 var timerModule = angular.module('timer', [])
   .directive('timer', ['$compile', function ($compile) {
     return  {
