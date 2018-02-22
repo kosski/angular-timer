@@ -115,8 +115,10 @@ var timerModule = angular.module('timer', [])
         });
 
         $scope.start = function () {
-          $scope.startTime = $scope.startTimeAttr ? moment($scope.startTimeAttr) : moment();
-          $scope.endTime = $scope.endTimeAttr ? moment($scope.endTimeAttr) : null;
+          var now = moment();
+          $scope.startTime = $scope.startTimeAttr ? moment($scope.startTimeAttr) : now;
+          $scope.endTime = $scope.endTimeAttr ? moment($scope.endTimeAttr) : now;
+          
           if (!angular.isNumber($scope.countdown)) {
             $scope.countdown = angular.isNumber($scope.countdownattr) && parseInt($scope.countdownattr, 10) > 0 ? parseInt($scope.countdownattr, 10) : undefined;
           }
